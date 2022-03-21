@@ -299,6 +299,8 @@ background: linear-gradient(90deg, rgba(237,237,237,1) 0%, rgba(207,10,44,1) 100
     gap: 1.5rem;
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
     transition: 0.5s;
+    padding: 1.5rem;
+
 }
 
 .testimonial-card:hover{
