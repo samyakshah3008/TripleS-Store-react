@@ -7,9 +7,9 @@ export function NewArrivals() {
 
       <div className="product-container">
         <div className="product-card">
-          <a href="/styles/product/product.html" target="_blank">
+    
             <img src={nikeShoes} className="card-img" alt="nike=shoes" />
-          </a>
+          
           <div className="card-info">Nike Sport Shoes</div>
           <i className="fas fa-star star selected-star"></i>
           <i className="fas fa-star star selected-star"></i>
@@ -20,9 +20,9 @@ export function NewArrivals() {
         </div>
 
         <div className="product-card">
-          <a href="/styles/product/product.html" target="_blank">
+    
             <img src={nikeShoes} className="card-img" alt="nike=shoes" />
-          </a>
+          
           <div className="card-info">Nike Sport Shoes</div>
           <i className="fas fa-star star selected-star"></i>
           <i className="fas fa-star star selected-star"></i>
@@ -33,9 +33,9 @@ export function NewArrivals() {
         </div>
 
         <div className="product-card">
-          <a href="/styles/product/product.html" target="_blank">
+    
             <img src={nikeShoes} className="card-img" alt="nike=shoes" />
-          </a>
+          
           <div className="card-info">Nike Sport Shoes</div>
           <i className="fas fa-star star selected-star"></i>
           <i className="fas fa-star star selected-star"></i>
