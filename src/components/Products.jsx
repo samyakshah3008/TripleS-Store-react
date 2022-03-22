@@ -17,13 +17,7 @@ export function Products() {
           <Card key={item.id} item={item} />
         ))}
 
-        <div className="page-btn">
-          <span className="page-numbers number-active">1</span>
-          <span className="page-numbers">2</span>
-          <span className="page-numbers">3</span>
-          <span className="page-numbers">4</span>
-          <span className="page-numbers"> &#8594; </span>
-        </div>
+        
       </div>
     </div>
   );
