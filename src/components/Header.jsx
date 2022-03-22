@@ -13,9 +13,9 @@ export function Header() {
             perspiciatis quia, aspernatur quod fugiat! Optio, quisquam nisi quos
             culpa aliquam et.
           </p>
-          <a href="/styles/product/product.html" target="_blank">
+          
             <button className="shop-now-btn">Shop now</button>
-          </a>
+        
         </div>
 
         <div className="hero-header-img">
