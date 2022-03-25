@@ -29,7 +29,7 @@ export const products = [
     percentOff: "53%",
     inStock: false,
     fastDelivery: true,
-    rating: 3
+    ratings: 3
   },
   {
     _id: uuid(),
@@ -42,7 +42,7 @@ export const products = [
     percentOff: "53%",
     inStock: true,
     fastDelivery: false,
-    rating: 4
+    ratings: 4
   },
   {
     _id: uuid(),
@@ -55,7 +55,7 @@ export const products = [
     percentOff: "53%",
     inStock: true,
     fastDelivery: false,
-    rating: 2
+    ratings: 2
   },
 
   {
@@ -69,7 +69,7 @@ export const products = [
     percentOff: "53%",
     inStock: false,
     fastDelivery: false,
-    rating: 1
+    ratings: 1
   },
   {
     _id: uuid(),
@@ -82,7 +82,7 @@ export const products = [
     percentOff: "53%",
     inStock: true,
     fastDelivery: true,
-    rating: 3
+    ratings: 3
   },
   {
     _id: uuid(),
@@ -95,7 +95,7 @@ export const products = [
     percentOff: "53%",
     inStock: true,
     fastDelivery: true,
-    rating: 3
+    ratings: 3
   },
   {
     _id: uuid(),
@@ -108,7 +108,7 @@ export const products = [
     percentOff: "53%",
     inStock: true,
     fastDelivery: true,
-    rating: 5
+    ratings: 5
   }, 
 
   {
@@ -122,7 +122,7 @@ export const products = [
     percentOff: "53%",
     inStock: true,
     fastDelivery: false,
-    rating: 3
+    ratings: 3
   },{
     _id: uuid(),
     imageURL: spartanBat,
@@ -134,6 +134,6 @@ export const products = [
     percentOff: "53%",
     inStock: true,
     fastDelivery: false,
-    rating: 5
+    ratings: 5
   },
 ];
