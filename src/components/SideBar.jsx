@@ -1,4 +1,22 @@
+import { useFilter } from "../contexts/filtercontext";
+import { useProduct } from "../contexts/product-context";
+
+
+
 export function SideBar() {
+
+  const {state, dispatch} = useFilter() 
+  const {products} = useProduct()
+
+  // console.log(state)
+
+  
+
+  // console.log(priceRangeList);
+
+  
+
+
   return (
     <div>
       <div className="side-bar-container">
@@ -12,23 +30,23 @@ export function SideBar() {
             <div className="filter-title">Price</div>
             <div className="filter-value">
               <div className="filter-price">
-                <div>$500</div>
-                <div>$5000</div>
+                <div>500</div>
+                <div> {state.range} </div>
               </div>
             </div>
-            <input
+            <input onChange={(e) => dispatch({type: "RANGE_FILTER", payload: e.target.value})}
               className="range-input"
               type="range"
               min="500"
               max="5000"
-              value="2500"
+              value={state.range}
             />
             <div>
-            <input className="instock" type = "radio"/>
+            <input className="instock" type = "checkbox" onClick={(e) => dispatch({type: "ONLY_IN_STOCK", payload: e.target.checked})} />
             <label>Include only in stock products</label> 
             </div>
             <div>
-            <input className="fastdelivery" type = "radio"/>
+            <input className="fastdelivery" type = "checkbox" onClick={(e) => dispatch({type: "FAST_DELIVERY", payload: e.target.checked })} />
             <label>Fast delivery</label>
             </div>
           </div> 
@@ -73,7 +91,7 @@ export function SideBar() {
                   className="radio-input"
                   type="radio"
                   name="rating"
-                  checked
+                  
                 />
                 4 Stars and above
               </label>
@@ -123,3 +141,4 @@ export function SideBar() {
     </div>
   );
 }
+
