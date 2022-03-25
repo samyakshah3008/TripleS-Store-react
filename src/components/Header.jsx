@@ -1,5 +1,5 @@
-import heroHeader from "../assets/hero-header.png"
-
+import { Link } from "react-router-dom";
+import heroHeader from "../assets/hero-header.png";
 
 export function Header() {
   return (
@@ -13,9 +13,11 @@ export function Header() {
             perspiciatis quia, aspernatur quod fugiat! Optio, quisquam nisi quos
             culpa aliquam et.
           </p>
-          
-            <button className="shop-now-btn">Shop now</button>
-        
+
+          <Link to="/products">
+            {" "}
+            <button className="shop-now-btn">Shop now</button>{" "}
+          </Link>
         </div>
 
         <div className="hero-header-img">

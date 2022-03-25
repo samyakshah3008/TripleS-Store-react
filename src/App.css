@@ -18,7 +18,7 @@
     --white: #FFFFFF; 
     --gray: #6c757d;
     --gray-dark: #343a40;
-    --primary: #cf0a2c;
+    --primary-color: #cf0a2c;
     --success: #008827;
     --info: #17a2b8;
     --warning: #ffc107;
@@ -37,12 +37,12 @@
    }
    
    ::-webkit-scrollbar-thumb{
-    background-color: var(--primary);
+    background-color: var(--primary-color);
     border-radius: 5px;
    }
 
 a:hover{
-    color: var(--primary);
+    color: var(--primary-color);
 }
 
 

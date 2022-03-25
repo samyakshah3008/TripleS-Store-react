@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
+
 export function NavBar() {
   return (
     <div>
       <nav>
         <div className="nav-container">
-          <div className="nav-logo">TripleS Store</div>
+          
+          <Link to = "/"><div className="nav-logo">TripleS Store</div></Link>
           <div className="input-container">
             <input type="text" className="nav-input" placeholder="Search" />
             <span className="fas fa-search search-btn"></span>

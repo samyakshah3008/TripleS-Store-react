@@ -11,11 +11,17 @@ import nbBat from "./assets/nb-bat.jpg";
 import spartanBat from "./assets/spartan-bat.jpg";
 import { LandingPage } from "./pages/LandingPage";
 import nikeShoes from "./assets/nike-shoes.png";
+import { ProductPage } from "./pages/ProductPage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { NavBar } from "./components/NavBar";
 
 function App() {
   return (
     <div className="App">
-      <LandingPage></LandingPage>
+      <Routes>
+        <Route path="/products" element={<ProductPage />}></Route>
+        <Route path="/" element={<LandingPage />}></Route>
+      </Routes>
     </div>
   );
 }
