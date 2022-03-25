@@ -8,7 +8,7 @@ import Card from "./Card";
 import { useProduct } from "../contexts/product-context";
 import { useReducer } from "react";
 import { useFilter } from "../contexts/filtercontext";
-import { fastDeliveryFilter, priceRangeFilter, stockFilter, sortData } from "../utilities/filter-utils";
+import { fastDeliveryFilter, priceRangeFilter, stockFilter, sortData, ratingFilter } from "../utilities/filter-utils";
 
 
 export function Products() {     
@@ -30,6 +30,7 @@ export function Products() {
   
   const sortFinalList = sortData(fastDeliveryList, state.sortBy);
 
+  const ratingsFilterList = ratingFilter(sortFinalList, state.ratings);
 
 
 
@@ -39,7 +40,7 @@ export function Products() {
   return (
     <div>
       <div className="product-display-container">
-        {sortFinalList.map((item) => (
+        {ratingsFilterList.map((item) => (
           <Card key={item.id} item={item} />
         ))}
 
