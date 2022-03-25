@@ -170,3 +170,11 @@
 .full-card-width{
     width: 100%;
 }
+
+.instock{
+    margin-top: 1rem;
+}
+
+.fastdelivery{
+    margin-top: 0.7rem;
+}
