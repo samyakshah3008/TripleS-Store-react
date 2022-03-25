@@ -23,7 +23,15 @@ export function SideBar() {
               max="5000"
               value="2500"
             />
-          </div>
+            <div>
+            <input className="instock" type = "radio"/>
+            <label>Include only in stock products</label> 
+            </div>
+            <div>
+            <input className="fastdelivery" type = "radio"/>
+            <label>Fast delivery</label>
+            </div>
+          </div> 
           <div className="filter-wrapper">
             <div className="filter-title">Category</div>
             <div className="filter-value filter-category">
@@ -53,21 +61,10 @@ export function SideBar() {
               </label>
             </div>
           </div>
+          
           <div className="filter-wrapper">
             <div className="filter-title">Ratings</div>
-            <div className="filter-value">
-              <div className="filter-price">
-                <div>Low</div>
-                <div>High</div>
-              </div>
-            </div>
-            <input
-              className="range-input"
-              type="range"
-              min="500"
-              max="5000"
-              value="4500"
-            />
+           
           </div>
           <div className="filter-wrapper">
             <div className="filter-value filter-rating">
