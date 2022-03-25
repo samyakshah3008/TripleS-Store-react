@@ -121,7 +121,7 @@ export function SideBar() {
                   className="radio-input"
                   type="radio"
                   name="price-level"
-                  checked
+                  onClick={(e) => dispatch({ type: "SORT_BY", payload: "HIGH_TO_LOW" })}
                 />
                 Price: High to Low
               </label>
@@ -131,6 +131,7 @@ export function SideBar() {
                   className="radio-input"
                   type="radio"
                   name="price-level"
+                  onClick={(e) => dispatch({ type: "SORT_BY", payload: "LOW_TO_HIGH" })}
                 />
                 Price: Low to High
               </label>
