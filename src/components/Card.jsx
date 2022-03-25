@@ -19,6 +19,8 @@ const Card = ({ item }) => {
             </div>
           </div>
           <div className="discount-percent"> {item.percentOff} </div>
+          <div> {item.inStock ? "Available in stock" : "Not available"} </div>
+          <div> {item.fastDelivery ? "Fast delivery" : "Minimum 2 days"} </div>
         </div>
 
         <div className="container3">
