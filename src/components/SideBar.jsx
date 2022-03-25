@@ -91,23 +91,23 @@ export function SideBar() {
                   className="radio-input"
                   type="radio"
                   name="rating"
-                  
+                  onClick={(e) => dispatch({ type: "RATINGS", payload: "4STARSABOVE" })}
                 />
                 4 Stars and above
               </label>
 
               <label>
-                <input className="radio-input" type="radio" name="rating" />3
+                <input className="radio-input" type="radio" name="rating" onClick={(e) => dispatch({ type: "RATINGS", payload: "3STARSABOVE" })} />3
                 Stars and above
               </label>
 
               <label>
-                <input className="radio-input" type="radio" name="rating" />2
+                <input className="radio-input" type="radio" name="rating" onClick={(e) => dispatch({ type: "RATINGS", payload: "2STARSABOVE" })}/>2
                 Stars and above
               </label>
 
               <label>
-                <input className="radio-input" type="radio" name="rating" />1
+                <input className="radio-input" type="radio" name="rating" onClick={(e) => dispatch({ type: "RATINGS", payload: "1STARSABOVE" })} />1
                 Stars and above
               </label>
             </div>
