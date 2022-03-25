@@ -1,4 +1,4 @@
-export {priceRangeFilter, stockFilter, fastDeliveryFilter, sortData}
+export {priceRangeFilter, stockFilter, fastDeliveryFilter, sortData, ratingFilter}
 
 const priceRangeFilter = (priceList, filterPriceList) => {
   return priceList.filter((item) => item.price <= filterPriceList);
@@ -25,4 +25,22 @@ const stockFilter = (stockList, filterStockList) => {
     }
     return prodList;
   };
+
+  const ratingFilter = (ratingList, ratingByList) => {
+    if (ratingByList === "4STARSABOVE") {
+      return [...ratingList].filter((item) => item.ratings >= 4);
+    }
+    if (ratingByList === "3STARSABOVE") {
+      return [...ratingList].filter((item) => item.ratings >= 3);
+    }
+    if (ratingByList === "2STARSABOVE") {
+      return [...ratingList].filter((item) => item.ratings >= 2);
+    }
+    if (ratingByList === "1STARSABOVE") {
+      return [...ratingList].filter((item) => item.ratings >= 1);
+    }
+    return ratingList;
+  };
+
+
 
