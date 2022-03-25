@@ -28,7 +28,7 @@ export const products = [
     categoryName: "nike",
     percentOff: "53%",
     inStock: false,
-    fastDelivery: false,
+    fastDelivery: true,
     rating: 3
   },
   {
