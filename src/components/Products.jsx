@@ -39,7 +39,7 @@ export function Products() {
   return (
     <div>
       <div className="product-display-container">
-        {fastDeliveryList.map((item) => (
+        {sortFinalList.map((item) => (
           <Card key={item.id} item={item} />
         ))}
 
