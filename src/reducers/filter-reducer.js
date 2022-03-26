@@ -15,8 +15,19 @@ const reducerCallBack = (state, action) => {
 
       case "RATINGS":
         return { ...state, ratings: action.payload };
-      
-    
+
+      case "MRF":
+        return {...state, categories: {...state.categories, mrf: !state.categories.mrf} }
+      case "NIKE":
+        return {...state, categories: {...state.categories, nike: !state.categories.nike} }
+      case "SPARTAN":
+        return {...state, categories: {...state.categories, spartan: !state.categories.spartan} }
+      case "EXCLUSIVE":
+        return {...state, categories: {...state.categories, exclusive: !state.categories.exclusive} }
+      case "KOOKABURA":
+        return {...state, categories: {...state.categories, kookabura: !state.categories.kookabura} } 
+        case "NEWBALANCE":
+          return {...state, categories: {...state.categories, newbalance: !state.categories.newbalance} }  
       default:
         return state
     }
