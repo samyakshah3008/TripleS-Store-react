@@ -54,27 +54,33 @@ export function SideBar() {
             <div className="filter-title">Category</div>
             <div className="filter-value filter-category">
               <label>
-                <input className="checkbox-input" type="checkbox" />
+                <input onChange={(e) => dispatch({type: "MRF" })} className="checkbox-input" type="checkbox" />
                 MRF
               </label>
 
               <label>
-                <input className="checkbox-input" type="checkbox" />
+                <input onChange={(e) => dispatch({type: "KOOKABURA" })} className="checkbox-input" type="checkbox" />
                 Kookaburra
               </label>
 
               <label>
-                <input className="checkbox-input" type="checkbox" />
+                <input onChange={(e) => dispatch({type: "NIKE" })} className="checkbox-input" type="checkbox" />
+                Nike
+              </label>
+
+
+              <label>
+                <input onChange={(e) => dispatch({type: "NEWBALANCE" })} className="checkbox-input" type="checkbox" />
                 New Balance
               </label>
 
               <label>
-                <input className="checkbox-input" type="checkbox" />
+                <input onChange={(e) => dispatch({type: "SPARTAN" })} className="checkbox-input" type="checkbox" />
                 Spartan
               </label>
 
               <label>
-                <input className="checkbox-input" type="checkbox" />
+                <input onChange={(e) => dispatch({type: "EXCLUSIVE" })} className="checkbox-input" type="checkbox" />
                 Exclusive items
               </label>
             </div>
