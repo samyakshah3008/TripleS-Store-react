@@ -1,21 +1,13 @@
 import { useFilter } from "../contexts/filtercontext";
 import { useProduct } from "../contexts/product-context";
 
-
-
 export function SideBar() {
-
-  const {state, dispatch} = useFilter() 
-  const {products} = useProduct()
+  const { state, dispatch } = useFilter();
+  const { products } = useProduct();
 
   // console.log(state)
 
-  
-
   // console.log(priceRangeList);
-
-  
-
 
   return (
     <div>
@@ -34,7 +26,10 @@ export function SideBar() {
                 <div> {state.range} </div>
               </div>
             </div>
-            <input onChange={(e) => dispatch({type: "RANGE_FILTER", payload: e.target.value})}
+            <input
+              onChange={(e) =>
+                dispatch({ type: "RANGE_FILTER", payload: e.target.value })
+              }
               className="range-input"
               type="range"
               min="500"
@@ -42,53 +37,87 @@ export function SideBar() {
               value={state.range}
             />
             <div>
-            <input className="instock" type = "checkbox" onClick={(e) => dispatch({type: "ONLY_IN_STOCK", payload: e.target.checked})} />
-            <label>Include only in stock products</label> 
+              <input
+                className="instock"
+                type="checkbox"
+                onClick={(e) =>
+                  dispatch({ type: "ONLY_IN_STOCK", payload: e.target.checked })
+                }
+              />
+              <label>Include only in stock products</label>
             </div>
             <div>
-            <input className="fastdelivery" type = "checkbox" onClick={(e) => dispatch({type: "FAST_DELIVERY", payload: e.target.checked })} />
-            <label>Fast delivery</label>
+              <input
+                className="fastdelivery"
+                type="checkbox"
+                onClick={(e) =>
+                  dispatch({ type: "FAST_DELIVERY", payload: e.target.checked })
+                }
+              />
+              <label>Fast delivery</label>
             </div>
-          </div> 
+          </div>
           <div className="filter-wrapper">
             <div className="filter-title">Category</div>
             <div className="filter-value filter-category">
               <label>
-                <input onChange={(e) => dispatch({type: "MRF" })} className="checkbox-input" type="checkbox" />
+                <input
+                  onChange={(e) => dispatch({ type: "MRF" })}
+                  className="checkbox-input"
+                  type="checkbox"
+                />
                 MRF
               </label>
 
               <label>
-                <input onChange={(e) => dispatch({type: "KOOKABURA" })} className="checkbox-input" type="checkbox" />
+                <input
+                  onChange={(e) => dispatch({ type: "KOOKABURA" })}
+                  className="checkbox-input"
+                  type="checkbox"
+                />
                 Kookaburra
               </label>
 
               <label>
-                <input onChange={(e) => dispatch({type: "NIKE" })} className="checkbox-input" type="checkbox" />
+                <input
+                  onChange={(e) => dispatch({ type: "NIKE" })}
+                  className="checkbox-input"
+                  type="checkbox"
+                />
                 Nike
               </label>
 
-
               <label>
-                <input onChange={(e) => dispatch({type: "NEWBALANCE" })} className="checkbox-input" type="checkbox" />
+                <input
+                  onChange={(e) => dispatch({ type: "NEWBALANCE" })}
+                  className="checkbox-input"
+                  type="checkbox"
+                />
                 New Balance
               </label>
 
               <label>
-                <input onChange={(e) => dispatch({type: "SPARTAN" })} className="checkbox-input" type="checkbox" />
+                <input
+                  onChange={(e) => dispatch({ type: "SPARTAN" })}
+                  className="checkbox-input"
+                  type="checkbox"
+                />
                 Spartan
               </label>
 
               <label>
-                <input onChange={(e) => dispatch({type: "EXCLUSIVE" })} className="checkbox-input" type="checkbox" />
+                <input
+                  onChange={(e) => dispatch({ type: "EXCLUSIVE" })}
+                  className="checkbox-input"
+                  type="checkbox"
+                />
                 Exclusive items
               </label>
             </div>
           </div>
-          
+
           <div className="filter-wrapper">
             <div className="filter-title">Ratings</div>
-           
           </div>
           <div className="filter-wrapper">
             <div className="filter-value filter-rating">
@@ -97,24 +126,47 @@ export function SideBar() {
                   className="radio-input"
                   type="radio"
                   name="rating"
-                  onClick={(e) => dispatch({ type: "RATINGS", payload: "4STARSABOVE" })}
+                  onClick={(e) =>
+                    dispatch({ type: "RATINGS", payload: "4STARSABOVE" })
+                  }
                 />
                 4 Stars and above
               </label>
 
               <label>
-                <input className="radio-input" type="radio" name="rating" onClick={(e) => dispatch({ type: "RATINGS", payload: "3STARSABOVE" })} />3
-                Stars and above
+                <input
+                  className="radio-input"
+                  type="radio"
+                  name="rating"
+                  onClick={(e) =>
+                    dispatch({ type: "RATINGS", payload: "3STARSABOVE" })
+                  }
+                />
+                3 Stars and above
               </label>
 
               <label>
-                <input className="radio-input" type="radio" name="rating" onClick={(e) => dispatch({ type: "RATINGS", payload: "2STARSABOVE" })}/>2
-                Stars and above
+                <input
+                  className="radio-input"
+                  type="radio"
+                  name="rating"
+                  onClick={(e) =>
+                    dispatch({ type: "RATINGS", payload: "2STARSABOVE" })
+                  }
+                />
+                2 Stars and above
               </label>
 
               <label>
-                <input className="radio-input" type="radio" name="rating" onClick={(e) => dispatch({ type: "RATINGS", payload: "1STARSABOVE" })} />1
-                Stars and above
+                <input
+                  className="radio-input"
+                  type="radio"
+                  name="rating"
+                  onClick={(e) =>
+                    dispatch({ type: "RATINGS", payload: "1STARSABOVE" })
+                  }
+                />
+                1 Stars and above
               </label>
             </div>
           </div>
@@ -127,7 +179,9 @@ export function SideBar() {
                   className="radio-input"
                   type="radio"
                   name="price-level"
-                  onClick={(e) => dispatch({ type: "SORT_BY", payload: "HIGH_TO_LOW" })}
+                  onClick={(e) =>
+                    dispatch({ type: "SORT_BY", payload: "HIGH_TO_LOW" })
+                  }
                 />
                 Price: High to Low
               </label>
@@ -137,7 +191,9 @@ export function SideBar() {
                   className="radio-input"
                   type="radio"
                   name="price-level"
-                  onClick={(e) => dispatch({ type: "SORT_BY", payload: "LOW_TO_HIGH" })}
+                  onClick={(e) =>
+                    dispatch({ type: "SORT_BY", payload: "LOW_TO_HIGH" })
+                  }
                 />
                 Price: Low to High
               </label>
@@ -148,4 +204,3 @@ export function SideBar() {
     </div>
   );
 }
-
