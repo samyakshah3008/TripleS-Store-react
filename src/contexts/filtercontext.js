@@ -7,8 +7,10 @@ const initialState = {
     onlyInStock: false,
     fastDelivery: false,
     sortBy: null,
-    ratings: null
+    ratings: null,
+    categories: {mrf: false, kookabura: false, spartan: false, nike: false, exclusive: false, newbalance: false}
 }
+
 
 
 
