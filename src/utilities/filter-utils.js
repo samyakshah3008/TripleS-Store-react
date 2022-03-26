@@ -1,4 +1,4 @@
-export {priceRangeFilter, stockFilter, fastDeliveryFilter, sortData, ratingFilter}
+export {priceRangeFilter, stockFilter, fastDeliveryFilter, sortData, ratingFilter, sortByCategory}
 
 const priceRangeFilter = (priceList, filterPriceList) => {
   return priceList.filter((item) => item.price <= filterPriceList);
@@ -42,5 +42,41 @@ const stockFilter = (stockList, filterStockList) => {
     return ratingList;
   };
 
+  const sortByCategory = (sortCategoryList,  mrf, kookabura, spartan, nike, exclusive, newbalance) => {
+      const newArray = [] 
+      if(mrf === false && kookabura === false && spartan === false && nike === false && exclusive === false && newbalance === false) {
+        return sortCategoryList
+    }
+    if(mrf === true) {
+        let newList = sortCategoryList.filter(item => item.categoryName === "mrf");
+        newArray.push(...newList); 
+    }
+    if(kookabura === true) {
+        let newList = sortCategoryList.filter(item => item.categoryName === "kookabura");
+        newArray.push(...newList); 
+    }
+    if(spartan === true) {
+        let newList = sortCategoryList.filter(item => item.categoryName === "spartan");
+        newArray.push(...newList); 
+    }
+    if(nike === true) {
+        let newList = sortCategoryList.filter(item => item.categoryName === "nike");
+        newArray.push(...newList); 
+    }  
+    if(newbalance === true) {
+      let newList = sortCategoryList.filter(item => item.categoryName === "newbalance");
+      newArray.push(...newList); 
+  }
+    if(exclusive === true) {
+      let newList = sortCategoryList.filter(item => item.categoryName === "exclusive");
+      newArray.push(...newList); 
+  }
+console.log(newArray)
+
+    return newArray;
+
+}
 
 
+
+  
