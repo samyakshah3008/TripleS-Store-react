@@ -8,21 +8,22 @@ import Card from "./Card";
 import { useProduct } from "../contexts/product-context";
 import { useReducer } from "react";
 import { useFilter } from "../contexts/filtercontext";
-import { fastDeliveryFilter, priceRangeFilter, stockFilter, sortData, ratingFilter, sortByCategory } from "../utilities/filter-utils";
+import {
+  fastDeliveryFilter,
+  priceRangeFilter,
+  stockFilter,
+  sortData,
+  ratingFilter,
+  sortByCategory,
+} from "../utilities/filter-utils";
 
-
-export function Products() {     
-
-
-  // const priceRangeList = priceRangeFilter(state.products, )
-
-
+export function Products() {
   const { products } = useProduct();
 
-  const {state, dispatch} = useFilter()
+  const { state, dispatch } = useFilter();
 
-  const {mrf, kookabura, spartan, nike, exclusive, newbalance} = state.categories;
-
+  const { mrf, kookabura, spartan, nike, exclusive, newbalance } =
+    state.categories;
 
   const priceRangeList = priceRangeFilter(products, state.range);
   const stockFilterList = stockFilter(priceRangeList, state.onlyInStock);
@@ -30,24 +31,27 @@ export function Products() {
     stockFilterList,
     state.fastDelivery
   );
-  
+
   const sortFinalList = sortData(fastDeliveryList, state.sortBy);
 
   const ratingsFilterList = ratingFilter(sortFinalList, state.ratings);
 
-  const sortByCategoryFinalList = sortByCategory(ratingsFilterList, mrf, kookabura, spartan, nike, exclusive, newbalance)
+  const sortByCategoryFinalList = sortByCategory(
+    ratingsFilterList,
+    mrf,
+    kookabura,
+    spartan,
+    nike,
+    exclusive,
+    newbalance
+  );
 
-
-
- 
   return (
     <div>
       <div className="product-display-container">
         {sortByCategoryFinalList.map((item) => (
           <Card key={item.id} item={item} />
         ))}
-
-        
       </div>
     </div>
   );
