@@ -16,6 +16,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar";
 import LoginPage from "./pages/LoginPage";
 import Mockman from "mockman-js";
+import Signup from "./pages/Signup";
+
 
 
 function App() {
@@ -26,6 +28,7 @@ function App() {
         <Route path="/" element={<LandingPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/mockman" element= {<Mockman />}></Route>
+        <Route path="/signup" element= {<Signup />}></Route>
 
 
 
