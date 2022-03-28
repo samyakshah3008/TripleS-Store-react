@@ -5,10 +5,6 @@ export function SideBar() {
   const { state, dispatch } = useFilter();
   const { products } = useProduct();
 
-  // console.log(state)
-
-  // console.log(priceRangeList);
-
   return (
     <div>
       <div className="side-bar-container">
