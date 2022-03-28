@@ -20,7 +20,7 @@ export function NavBar() {
           <div className="nav-btn-container">
             <div className="log-in-container">
               <i className="far fa-user-circle"></i>
-              <span className="log-in"> { user.token === null ? "login" : "logout" } </span>
+             <Link to = "/login"><span className="log-in"> { user.token === null ? "login" : "logout" } </span></Link>
             </div>
             <div className="wish-list-container">
               <i className="far fa-heart"></i>
