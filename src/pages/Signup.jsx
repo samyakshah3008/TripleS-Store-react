@@ -47,38 +47,38 @@ export default function Signup() {
 
      <main>
 
-        <div class="login-signup-container">
-            <div class="login-signup-header">Sign up</div>
-            <div class="name-container">
+        <div className="login-signup-container">
+            <div className="login-signup-header">Sign up</div>
+            <div className="name-container">
                 <div>Email</div>
-                <input name='email' onChange={(e) => changeHandlerSignup(e)} value = {userSignup.email} class="login-signup-input" type="text" placeholder="Enter mail"/>
+                <input name='email' onChange={(e) => changeHandlerSignup(e)} value = {userSignup.email} className="login-signup-input" type="text" placeholder="Enter mail"/>
             </div> 
 
-            <div class="name-container">
+            <div className="name-container">
                 <div>Enter first name</div>
-                <input name='firstName' onChange={(e) => changeHandlerSignup(e)} value = {userSignup.firstName} class="login-signup-input" type="text" placeholder="Enter first name"/>
+                <input name='firstName' onChange={(e) => changeHandlerSignup(e)} value = {userSignup.firstName} className="login-signup-input" type="text" placeholder="Enter first name"/>
             </div> 
 
-            <div class="name-container">
+            <div className="name-container">
                 <div>Enter last name</div>
-                <input name='lastName' onChange={(e) => changeHandlerSignup(e)} value = {userSignup.lastName} class="login-signup-input" type="text" placeholder="Enter last name"/>
+                <input name='lastName' onChange={(e) => changeHandlerSignup(e)} value = {userSignup.lastName} className="login-signup-input" type="text" placeholder="Enter last name"/>
             </div> 
 
-            <div class="password-container">
+            <div className="password-container">
                 <div>Password</div>
-                <input name='password' onChange={(e) => changeHandlerSignup(e)} value = {userSignup.password} class="login-signup-input" type="password" placeholder="Enter password"/>
+                <input name='password' onChange={(e) => changeHandlerSignup(e)} value = {userSignup.password} className="login-signup-input" type="password" placeholder="Enter password"/>
             </div> 
 
             
 
-            <div class="remember-me-container">
-                <div><input class="checkbox" type="checkbox"/></div>
-                <div class="checkbox-message">Accept all terms and conditions</div>
+            <div className="remember-me-container">
+                <div><input className="checkbox" type="checkbox"/></div>
+                <div className="checkbox-message">Accept all terms and conditions</div>
             </div> 
-            <button onClick={signupUserHandler} class="signup-btn btn2">Create account</button>
-            <div class="login-instead-container">
-            <a href="/styles/authentication/login.html"><div class="login-message">Already have account?</div></a> 
-            <div><i class=" fas fa-chevron-right site-icon "></i></div>
+            <button onClick={signupUserHandler} className="signup-btn btn2">Create account</button>
+            <div className="login-instead-container">
+            <a href="/styles/authentication/login.html"><div className="login-message">Already have account?</div></a> 
+            <div><i className=" fas fa-chevron-right site-icon "></i></div>
         </div>
         </div>
 
