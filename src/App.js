@@ -18,8 +18,6 @@ import LoginPage from "./pages/LoginPage";
 import Mockman from "mockman-js";
 import Signup from "./pages/Signup";
 
-
-
 function App() {
   return (
     <div className="App">
@@ -27,11 +25,8 @@ function App() {
         <Route path="/products" element={<ProductPage />}></Route>
         <Route path="/" element={<LandingPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
-        <Route path="/mockman" element= {<Mockman />}></Route>
-        <Route path="/signup" element= {<Signup />}></Route>
-
-
-
+        <Route path="/mockman" element={<Mockman />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
       </Routes>
     </div>
   );
