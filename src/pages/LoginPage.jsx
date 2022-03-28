@@ -4,7 +4,7 @@ import { useState } from "react"
 import { users } from '../backend/db/users'
 import { NavBar } from '../components/NavBar'
 import { useAuth } from '../contexts/auth-context'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import  "./LoginPage.css" 
 
@@ -69,7 +69,7 @@ export default function LoginPage() {
             <a href="/styles/profile/profile.html"><button className="signup-btn btn2 secondary-test-credential-btn">log in with Test Credentials</button></a> 
 
             <div className="login-instead-container">
-            <a href="/styles/authentication/signup.html"><div className="login-message">Sign up instead</div></a> 
+            <a href="/styles/authentication/signup.html"> <Link to =  "/signup"><div className="login-message">Sign up instead</div></Link></a> 
             <div><i className=" fas fa-chevron-right site-icon "></i></div>
         </div>
         </div>
