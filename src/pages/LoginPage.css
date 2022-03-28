@@ -1,9 +1,9 @@
 .signup-btn{
     width: 7rem;
     padding: 10px;
-    background-color: var(--primary);
+    background-color: var(--primary-color);
     color: var(--white);
-    border: 2px solid var(--primary);
+    border: 2px solid var(--primary-color);
     cursor: pointer;
     transition: 0.4s;
 }
@@ -54,12 +54,12 @@
  
 .login-instead-container:hover{
     cursor: pointer;
-    color: var(--primary);
+    color: var(--primary-color);
 }
 
 .secondary-test-credential-btn{
     background-color: var(--white);
-    color: var(--primary);
+    color: var(--primary-color);
 
 }
 
