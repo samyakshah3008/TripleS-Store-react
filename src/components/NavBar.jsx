@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../contexts/auth-context";
+
+
 
 export function NavBar() {
+
+  const {user} = useAuth()
+
   return (
     <div>
       <nav>
@@ -14,7 +20,7 @@ export function NavBar() {
           <div className="nav-btn-container">
             <div className="log-in-container">
               <i className="far fa-user-circle"></i>
-              <span className="log-in">Log in</span>
+              <span className="log-in"> { user.token === null ? "login" : "logout" } </span>
             </div>
             <div className="wish-list-container">
               <i className="far fa-heart"></i>
