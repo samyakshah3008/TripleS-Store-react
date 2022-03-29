@@ -14,6 +14,9 @@ import nikeShoes from "./assets/nike-shoes.png";
 import { ProductPage } from "./pages/ProductPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar";
+import LoginPage from "./pages/LoginPage";
+import Mockman from "mockman-js";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
       <Routes>
         <Route path="/products" element={<ProductPage />}></Route>
         <Route path="/" element={<LandingPage />}></Route>
+        <Route path="/login" element={<LoginPage />}></Route>
+        <Route path="/mockman" element={<Mockman />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
       </Routes>
     </div>
   );
