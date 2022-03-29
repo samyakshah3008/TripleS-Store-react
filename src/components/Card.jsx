@@ -1,13 +1,35 @@
+import axios from "axios";
 import React from "react";
 import heroHeader from "../assets/hero-header.png";
+import { useAuth } from "../contexts/auth-context";
+import { useWishlist } from "../contexts/wishlist-context";
+
+
 
 const Card = ({ item }) => {
+  const {user} = useAuth()
+  const {setWishlist} = useWishlist()
+const addToWishlistHandler = async () => { 
+
+
+ const response = await axios({
+    method: 'post',
+    url: "/api/user/wishlist",
+    headers: { authorization: user.token },
+    data:{product: item}
+  });
+
+  setWishlist({ wishlist: response.data.wishlist})
+
+  // console.log(response)
+}
+
   return (
     <div>
       <div className="card e-commerce product-display-card">
         <div className="container1 badge-card">
           <img className="card-image" src={item.imageURL} />
-          <i className="image-badge-wishlist far fa-heart"></i>
+          <i onClick={addToWishlistHandler}  className="image-badge-wishlist far fa-heart"></i>
         </div>
 
         <div className="container2">
