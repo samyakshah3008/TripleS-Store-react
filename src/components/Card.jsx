@@ -3,12 +3,21 @@ import React from "react";
 import { useAuth } from "../contexts/auth-context";
 import { useWishlist } from "../contexts/wishlist-context";
 import { toast } from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const Card = ({ item, inWishlist }) => {
+  const navigate = useNavigate();
   const { user } = useAuth();
   const { wishlist, setWishlist } = useWishlist();
 
   const addToWishlistHandler = async () => {
+
+    if(user.token === null) {
+      navigate("/login");
+      
+    }
+
     try {
       if (wishlist.wishlist.find((isProduct) => isProduct._id === item._id)) {
         toast.error("Already in wishlist", { position: "top-right" });
