@@ -3,33 +3,67 @@ import React from "react";
 import heroHeader from "../assets/hero-header.png";
 import { useAuth } from "../contexts/auth-context";
 import { useWishlist } from "../contexts/wishlist-context";
+import { toast } from "react-hot-toast";
+import { useState } from "react";
 
+const Card = ({ item, inWishlist }) => {
+  const { user } = useAuth();
+  const { wishlist, setWishlist } = useWishlist();
 
+  const addToWishlistHandler = async () => {
+    try {
+      if (wishlist.wishlist.find((isProduct) => isProduct._id === item._id)) {
+        toast.error("Already in wishlist", { position: "top-right" });
+        return;
+      } else {
+        const response = await axios({
+          method: "post",
+          url: "/api/user/wishlist",
+          headers: { authorization: user.token },
+          data: { product: item },
+        });
 
-const Card = ({ item }) => {
-  const {user} = useAuth()
-  const {setWishlist} = useWishlist()
-const addToWishlistHandler = async () => { 
+        setWishlist({ wishlist: response.data.wishlist });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
+  const deleteToWishlistHandler = async () => {
+    try {
+      const deleteResponse = await axios({
+        method: "delete",
+        url: `/api/user/wishlist/${item._id}`,
+        headers: { authorization: user.token },
+        data: { product: item },
+      });
 
- const response = await axios({
-    method: 'post',
-    url: "/api/user/wishlist",
-    headers: { authorization: user.token },
-    data:{product: item}
-  });
+      setWishlist({ wishlist: deleteResponse.data.wishlist });
+      console.log(wishlist.wishlist);
 
-  setWishlist({ wishlist: response.data.wishlist})
-
-  // console.log(response)
-}
+      console.log(deleteResponse);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div>
       <div className="card e-commerce product-display-card">
         <div className="container1 badge-card">
           <img className="card-image" src={item.imageURL} />
-          <i onClick={addToWishlistHandler}  className="image-badge-wishlist far fa-heart"></i>
+          {inWishlist ? (
+            <i
+              onClick={deleteToWishlistHandler}
+              className="image-badge-wishlist fa fa-heart"
+            ></i>
+          ) : (
+            <i
+              onClick={addToWishlistHandler}
+              className="image-badge-wishlist far fa-heart"
+            ></i>
+          )}
         </div>
 
         <div className="container2">
