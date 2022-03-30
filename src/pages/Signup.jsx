@@ -105,9 +105,10 @@ export default function Signup() {
             Create account
           </button>
           <div className="login-instead-container">
-            <a href="/styles/authentication/login.html">
+            <Link to="/login">
               <div className="login-message">Already have account?</div>
-            </a>
+            </Link>
+
             <div>
               <i className=" fas fa-chevron-right site-icon "></i>
             </div>
