@@ -20,8 +20,8 @@ import { useWishlist } from "../contexts/wishlist-context";
 
 export function Products() {
   const { products } = useProduct();
-  const {wishlist} = useWishlist()
-  const wishlistid = wishlist.wishlist.map((item) => item._id)
+  const { wishlist } = useWishlist();
+  const wishlistid = wishlist.wishlist.map((item) => item._id);
   const { state, dispatch } = useFilter();
 
   const { mrf, kookabura, spartan, nike, exclusive, newbalance } =
@@ -52,7 +52,11 @@ export function Products() {
     <div>
       <div className="product-display-container">
         {sortByCategoryFinalList.map((item) => (
-          <Card inWishlist = { wishlistid.includes(item._id) } key={item.id} item={item} />
+          <Card
+            inWishlist={wishlistid.includes(item._id)}
+            key={item.id}
+            item={item}
+          />
         ))}
       </div>
     </div>
