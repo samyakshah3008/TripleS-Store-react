@@ -21,10 +21,12 @@ export default function LoginPage() {
   };
   console.log(userDetail);
 
-  const logInUserHandler = async () => {
+  const logInUserHandler = async (isTestUser) => {
     try {
-      const response = await axios.post("/api/auth/login", userDetail);
-      console.log(response);
+      const response = await axios.post(
+        "/api/auth/login",
+        isTestUser ? { email: "a@gmail.com", password: "a" } : userDetail
+      );
       setUser({
         user: response.data.foundUser,
         token: response.data.encodedToken,
@@ -68,31 +70,25 @@ export default function LoginPage() {
             />
           </div>
 
-          <div className="remember-me-container">
-            <div>
-              <input className="checkbox" type="checkbox" />
-            </div>
-            <div className="checkbox-message">Remember me</div>
-            <a href="/styles/forgotpassword/forgotpassword.html">
-              Forgot Password?
-            </a>
-          </div>
-          <button onClick={logInUserHandler} className="signup-btn btn2">
+          <button
+            onClick={() => logInUserHandler(false)}
+            className="signup-btn btn2"
+          >
             log in
           </button>
-          <a href="/styles/profile/profile.html">
-            <button className="signup-btn btn2 secondary-test-credential-btn">
-              log in with Test Credentials
-            </button>
-          </a>
+
+          <button
+            onClick={() => logInUserHandler(true)}
+            className="signup-btn btn2 secondary-test-credential-btn"
+          >
+            log in with Test Credentials
+          </button>
 
           <div className="login-instead-container">
-            <a href="/styles/authentication/signup.html">
-              {" "}
-              <Link to="/signup">
-                <div className="login-message">Sign up instead</div>
-              </Link>
-            </a>
+            {" "}
+            <Link to="/signup">
+              <div className="login-message">Sign up instead</div>
+            </Link>
             <div>
               <i className=" fas fa-chevron-right site-icon "></i>
             </div>
