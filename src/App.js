@@ -17,16 +17,22 @@ import { NavBar } from "./components/NavBar";
 import LoginPage from "./pages/LoginPage";
 import Mockman from "mockman-js";
 import Signup from "./pages/Signup";
+import WishlistPage from "./pages/WishlistPage";
+import { Toaster } from "react-hot-toast"
 
 function App() {
   return (
+    
     <div className="App">
+      <Toaster />
       <Routes>
         <Route path="/products" element={<ProductPage />}></Route>
         <Route path="/" element={<LandingPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/mockman" element={<Mockman />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/wishlist" element={<WishlistPage />}></Route>
+
       </Routes>
     </div>
   );

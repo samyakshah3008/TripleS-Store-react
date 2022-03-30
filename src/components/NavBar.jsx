@@ -28,7 +28,7 @@ export function NavBar() {
             <div className="wish-list-container">
               <i className="far fa-heart"></i>
               <span className="number-badge">0</span>
-              <span className="wish-list">Wishlist</span>
+            <Link to = "/wishlist"><span className="wish-list">Wishlist</span></Link>
             </div>
             <div className="cart-container">
               <i className="fas fa-shopping-cart"></i>
