@@ -1,10 +1,8 @@
 import axios from "axios";
 import React from "react";
-import heroHeader from "../assets/hero-header.png";
 import { useAuth } from "../contexts/auth-context";
 import { useWishlist } from "../contexts/wishlist-context";
 import { toast } from "react-hot-toast";
-import { useState } from "react";
 
 const Card = ({ item, inWishlist }) => {
   const { user } = useAuth();
@@ -53,6 +51,9 @@ const Card = ({ item, inWishlist }) => {
       <div className="card e-commerce product-display-card">
         <div className="container1 badge-card">
           <img className="card-image" src={item.imageURL} />
+
+          {/* inWishlist contains that particular product's id and if it is true then applied conditional statement */}
+
           {inWishlist ? (
             <i
               onClick={deleteToWishlistHandler}
