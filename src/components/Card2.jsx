@@ -2,6 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useAuth } from '../contexts/auth-context'
 import { useCart } from '../contexts/cart-context'
+import { useWishlist } from '../contexts/wishlist-context'
 import "./card2.css"
 
 
@@ -13,7 +14,7 @@ export default function Card2({item}) {
 
 
     
-
+    const {wishlist, setWishlist} = useWishlist()
     const {user} = useAuth()
     const {cart, setCart} = useCart() 
 
@@ -64,6 +65,38 @@ const decrementHandler = async() => {
     setCart({cart: responseForDecrement.data.cart})
 }
 
+const addToWishlistHandler = async () => {
+ 
+  try {
+     {
+      const response = await axios({
+        method: "post",
+        url: "/api/user/wishlist",
+        headers: { authorization: user.token },
+        data: { product: item },
+      });
+      setWishlist({ wishlist: response.data.wishlist });
+    }
+  } catch (error) {
+    console.log(error);
+  } 
+
+  try {
+    const cartDeleteResponse = await axios({
+      method: "delete",
+      url: `/api/user/cart/${item._id}`,
+      headers: {authorization: user.token},
+      data: {product: item}
+    })
+
+    setCart({cart: cartDeleteResponse.data.cart}) 
+
+  } catch (error) {
+    console.log(error)
+  }
+};
+
+
   return (
     <div> 
         
@@ -97,7 +130,8 @@ const decrementHandler = async() => {
         </div>
          <button className="button2 full-width primary-color-button2" onClick={removeFromCartHandler} >Remove from cart</button>
 
-        
+         <button className="button2 full-width primary-color-button2" onClick={addToWishlistHandler} >Move to wishlist</button>
+
 
 
         
