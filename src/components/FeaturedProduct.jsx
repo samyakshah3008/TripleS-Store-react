@@ -3,17 +3,24 @@ import nikeFootball from "../assets/nike-football.png"
 import kookaburraBall from "../assets/kookabura-ball.png"
 import nikeShoes from "../assets/nike-shoes.png"
 import jersey from "../assets/jersey.png"
+import { useFilter } from "../contexts/filtercontext"
+import { navigate, useNavigate } from "react-router-dom"
 
 
 
 
-export function FeaturedProduct() {
+export function FeaturedProduct() { 
+
+  const navigate = useNavigate()
+  const {dispatch} = useFilter()
+
   return (
     <div>
       <h1 className="product-type-titles">Featured Products</h1>
 
       <div className="product-container">
-        <div className="product-card">
+        <div onClick={() => {dispatch({ type: "KOOKABURA" })
+        navigate("/products")}} className="product-card">
         
             <img src={mrfBat} className="card-img" alt="mrf-bat" />
           
