@@ -8,10 +8,14 @@ export function SideBar() {
   return (
     <div>
       <div className="side-bar-container">
+      
         <div className="title">
           <div className="heading-title">Filters</div>
         </div>
 
+        <h3 style={{cursor: "pointer"}} onClick={() => dispatch({ type: "CLEAR"})} >Clear filters</h3>
+
+        
         <div className="filters">
           <div className="filter-wrapper">
             <div className="filter-title">Price</div>
@@ -33,6 +37,7 @@ export function SideBar() {
             />
             <div>
               <input
+              checked = {state.onlyInStock}
                 className="instock"
                 type="checkbox"
                 onClick={(e) =>
@@ -43,6 +48,7 @@ export function SideBar() {
             </div>
             <div>
               <input
+              checked = {state.fastDelivery}
                 className="fastdelivery"
                 type="checkbox"
                 onClick={(e) =>
@@ -57,6 +63,7 @@ export function SideBar() {
             <div className="filter-value filter-category">
               <label>
                 <input
+                checked = {state.categories.mrf}
                   onChange={(e) => dispatch({ type: "MRF" })}
                   className="checkbox-input"
                   type="checkbox"
@@ -66,6 +73,7 @@ export function SideBar() {
 
               <label>
                 <input
+                checked = {state.categories.kookabura}
                   onChange={(e) => dispatch({ type: "KOOKABURA" })}
                   className="checkbox-input"
                   type="checkbox"
@@ -75,6 +83,7 @@ export function SideBar() {
 
               <label>
                 <input
+                checked = {state.categories.nike}
                   onChange={(e) => dispatch({ type: "NIKE" })}
                   className="checkbox-input"
                   type="checkbox"
@@ -84,6 +93,7 @@ export function SideBar() {
 
               <label>
                 <input
+                checked = {state.categories.newbalance}
                   onChange={(e) => dispatch({ type: "NEWBALANCE" })}
                   className="checkbox-input"
                   type="checkbox"
@@ -93,6 +103,7 @@ export function SideBar() {
 
               <label>
                 <input
+                checked = {state.categories.spartan}
                   onChange={(e) => dispatch({ type: "SPARTAN" })}
                   className="checkbox-input"
                   type="checkbox"
@@ -102,6 +113,7 @@ export function SideBar() {
 
               <label>
                 <input
+                checked = {state.categories.exclusive}
                   onChange={(e) => dispatch({ type: "EXCLUSIVE" })}
                   className="checkbox-input"
                   type="checkbox"
