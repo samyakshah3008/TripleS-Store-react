@@ -130,6 +130,7 @@ export function SideBar() {
             <div className="filter-value filter-rating">
               <label>
                 <input
+                checked = {state.ratings === "4STARSABOVE"}
                   className="radio-input"
                   type="radio"
                   name="rating"
@@ -142,6 +143,7 @@ export function SideBar() {
 
               <label>
                 <input
+                checked = {state.ratings === "3STARSABOVE"}
                   className="radio-input"
                   type="radio"
                   name="rating"
@@ -154,6 +156,7 @@ export function SideBar() {
 
               <label>
                 <input
+                checked = {state.ratings === "2STARSABOVE"}
                   className="radio-input"
                   type="radio"
                   name="rating"
@@ -166,6 +169,7 @@ export function SideBar() {
 
               <label>
                 <input
+                checked = {state.ratings === "1STARSABOVE"}
                   className="radio-input"
                   type="radio"
                   name="rating"

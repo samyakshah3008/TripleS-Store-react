@@ -13,11 +13,11 @@ export function LandingPage(){
         <div>
             <NavBar></NavBar>
             <Header></Header>
+            <Partners></Partners>
             <FeaturedProduct></FeaturedProduct>
             <NewArrivals></NewArrivals>
             <ExclusiveProduct></ExclusiveProduct>
             <Testimonials></Testimonials>
-            <Partners></Partners>
             <Footer></Footer>
         </div>
     )

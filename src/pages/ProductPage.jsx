@@ -4,8 +4,18 @@ import { NavBar } from "../components/NavBar";
 import "./ProductPage.css";
 import { SideBar } from "../components/SideBar";
 import { Products } from "../components/Products";
+import { useEffect } from "react";
+
 
 export function ProductPage() {
+  
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0
+      })
+    },0)
+},[])
   return (
   <div>
       <NavBar />
