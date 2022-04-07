@@ -187,6 +187,7 @@ export function SideBar() {
             <div className="filter-value">
               <label>
                 <input
+                checked = {state.sortBy === "HIGH_TO_LOW"}
                   className="radio-input"
                   type="radio"
                   name="price-level"
@@ -199,6 +200,7 @@ export function SideBar() {
 
               <label>
                 <input
+                checked = {state.sortBy === "LOW_TO_HIGH"}
                   className="radio-input"
                   type="radio"
                   name="price-level"
