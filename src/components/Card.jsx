@@ -4,18 +4,54 @@ import { useAuth } from "../contexts/auth-context";
 import { useWishlist } from "../contexts/wishlist-context";
 import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
+import { useCart } from "../contexts/cart-context";
+import { useEffect } from "react";
 
-
-const Card = ({ item, inWishlist }) => {
+const Card = ({ item, inWishlist, inCart }) => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { wishlist, setWishlist } = useWishlist();
+  const { cart, setCart } = useCart();
+
+  useEffect(() => {
+    user.token
+      ? (async () => {
+          try {
+            const responseFromServer = await axios.get("/api/user/wishlist", {
+              headers: { authorization: user.token },
+            });
+
+            if (responseFromServer.status === 200) {
+              setWishlist({ wishlist: responseFromServer.data.wishlist });
+            }
+          } catch (err) {
+            console.error("error", err);
+          }
+        })()
+      : setWishlist({ wishlist: [] });
+  }, []);
+
+  useEffect(() => {
+    user.token
+      ? (async () => {
+          try {
+            const responseForCart = await axios.get("/api/user/cart", {
+              headers: { authorization: user.token },
+            });
+
+            if (responseForCart.status === 200) {
+              setCart({ cart: responseForCart.data.cart });
+            }
+          } catch (error) {
+            console.log(error);
+          }
+        })()
+      : setCart({ cart: [] });
+  }, []);
 
   const addToWishlistHandler = async () => {
-
-    if(user.token === null) {
+    if (user.token === null) {
       navigate("/login");
-      
     }
 
     try {
@@ -29,7 +65,6 @@ const Card = ({ item, inWishlist }) => {
           headers: { authorization: user.token },
           data: { product: item },
         });
-
         setWishlist({ wishlist: response.data.wishlist });
       }
     } catch (error) {
@@ -47,9 +82,25 @@ const Card = ({ item, inWishlist }) => {
       });
 
       setWishlist({ wishlist: deleteResponse.data.wishlist });
-      console.log(wishlist.wishlist);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-      console.log(deleteResponse);
+  const goCartHandler = async () => {
+    if (user.token === null) {
+      navigate("/login");
+    }
+
+    try {
+      const cartResponse = await axios({
+        method: "post",
+        url: "/api/user/cart",
+        headers: { authorization: user.token },
+        data: { product: item },
+      });
+
+      setCart({ cart: cartResponse.data.cart });
     } catch (error) {
       console.log(error);
     }
@@ -77,6 +128,10 @@ const Card = ({ item, inWishlist }) => {
         </div>
 
         <div className="container2">
+          <h3 style={{ marginBottom: "1.2rem" }} className="card-title-product">
+            {" "}
+            {item.title}{" "}
+          </h3>
           <div className="card-description"> {item.description} </div>
           <div className="price">
             <div className="discount-price"> {item.price} </div>
@@ -91,12 +146,21 @@ const Card = ({ item, inWishlist }) => {
         </div>
 
         <div className="container3">
-          <button className="button2 full-width primary-color-button2">
-            Add to Cart
-          </button>
-          <button className="button2 full-width full-card-width">
-            View Product Details
-          </button>
+          {inCart ? (
+            <button
+              onClick={() => navigate("/cart")}
+              className="button2 full-width primary-color-button2"
+            >
+              Go to Cart
+            </button>
+          ) : (
+            <button
+              onClick={goCartHandler}
+              className="button2 full-width primary-color-button2"
+            >
+              Add to Cart
+            </button>
+          )}
         </div>
       </div>
     </div>

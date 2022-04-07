@@ -17,11 +17,15 @@ import {
   sortByCategory,
 } from "../utilities/filter-utils";
 import { useWishlist } from "../contexts/wishlist-context";
+import { useCart } from "../contexts/cart-context";
 
 export function Products() {
   const { products } = useProduct();
   const { wishlist } = useWishlist();
+  const { cart } = useCart();
   const wishlistid = wishlist.wishlist.map((item) => item._id);
+  const cartid = cart.cart.map((item) => item._id);
+
   const { state, dispatch } = useFilter();
 
   const { mrf, kookabura, spartan, nike, exclusive, newbalance } =
@@ -56,6 +60,7 @@ export function Products() {
             inWishlist={wishlistid.includes(item._id)}
             key={item.id}
             item={item}
+            inCart={cartid.includes(item._id)}
           />
         ))}
       </div>

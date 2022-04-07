@@ -19,7 +19,6 @@ export default function LoginPage() {
       [e.target.name]: e.target.value,
     }));
   };
-  console.log(userDetail);
 
   const logInUserHandler = async (isTestUser) => {
     try {

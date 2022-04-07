@@ -10,7 +10,6 @@ export function SideBar() {
       <div className="side-bar-container">
         <div className="title">
           <div className="heading-title">Filters</div>
-          <div className="clear-link">Clear</div>
         </div>
 
         <div className="filters">

@@ -13,7 +13,6 @@ const ProductProvider = ({ children }) => {
   useEffect(() => {
     (async () => {
       const productResponse = await axios.get("/api/products");
-      console.log(productResponse.data.products);
       if (productResponse.status === 200) {
        
         setProducts(productResponse.data.products)

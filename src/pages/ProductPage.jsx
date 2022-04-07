@@ -7,7 +7,7 @@ import { Products } from "../components/Products";
 
 export function ProductPage() {
   return (
-    <div>
+  <div>
       <NavBar />
 
       <div className="main-container">

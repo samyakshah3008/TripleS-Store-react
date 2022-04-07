@@ -1,13 +1,16 @@
 import React from "react";
 import Card from "../components/Card";
 import { NavBar } from "../components/NavBar";
+import { useCart } from "../contexts/cart-context";
 import { useWishlist } from "../contexts/wishlist-context";
 import "./wishlistpage.css";
 
 export default function WishlistPage() {
   const { wishlist } = useWishlist();
-
+  const {cart} = useCart()
   const wishlistid = wishlist.wishlist.map((item) => item._id);
+  const cartid = cart.cart.map((item) => item._id);
+  
 
   return (
     <div>
@@ -23,9 +26,10 @@ export default function WishlistPage() {
         <div className="product-display-container">
           {wishlist.wishlist.map((item) => (
             <Card
+            inCart={cartid.includes(item._id)}
               inWishlist={wishlistid.includes(item._id)}
-              key={item.id}
-              item={item}
+              key={item._id}
+              item= {item}
             />
           ))}
         </div>
