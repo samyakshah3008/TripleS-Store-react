@@ -21,6 +21,7 @@ export const products = [
   {
     _id: uuid(),
     imageURL: nikeShoes,
+    title: "Nike Shoes",
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, repudiandae?",
     originalPrice: "5000",
@@ -34,6 +35,7 @@ export const products = [
   {
     _id: uuid(),
     imageURL: mrfBat,
+    title: "MRF Cricket Bat",
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, repudiandae?",
     originalPrice: "10000",
@@ -47,6 +49,7 @@ export const products = [
   {
     _id: uuid(),
     imageURL: nikeFootball,
+    title: "Nike Football",
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, repudiandae?",
     originalPrice: "1000",
@@ -61,6 +64,7 @@ export const products = [
   {
     _id: uuid(),
     imageURL: jersey,
+    title: "Cricket jersey",
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, repudiandae?",
     originalPrice: "800",
@@ -74,6 +78,7 @@ export const products = [
   {
     _id: uuid(),
     imageURL: kookaburraBall,
+    title: "Kookaburra cricket ball",
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, repudiandae?",
     originalPrice: "799",
@@ -87,6 +92,7 @@ export const products = [
   {
     _id: uuid(),
     imageURL: nikeShoes,
+    title: "Nike shoes",
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, repudiandae?",
     originalPrice: "4000",
@@ -100,6 +106,7 @@ export const products = [
   {
     _id: uuid(),
     imageURL: miExclusive,
+    title: "Mi Exclusive watch",
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, repudiandae?",
     originalPrice: "5500",
@@ -114,6 +121,7 @@ export const products = [
   {
     _id: uuid(),
     imageURL: nbBat,
+    title: "New balance cricket bat",
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, repudiandae?",
     originalPrice: "10000",
@@ -126,6 +134,7 @@ export const products = [
   },{
     _id: uuid(),
     imageURL: spartanBat,
+    title: "Spartan cricket bat",
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, repudiandae?",
     originalPrice: "5000",
