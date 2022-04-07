@@ -2,6 +2,10 @@
 
 <br>
 
+### Project Preview 
+
+![preview](/src/assets/video/preview.gif)
+
 ### Home Page 
 
 - You can see a landing page with a list of featured categories.
