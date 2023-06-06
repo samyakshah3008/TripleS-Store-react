@@ -54,24 +54,23 @@ const reducerCallBack = (state, action) => {
           newbalance: !state.categories.newbalance,
         },
       };
-      case "CLEAR": 
+    case "CLEAR":
       return {
-        ...state, 
-          range: 5000,
-          onlyInStock: false,
-          fastDelivery: false,
-          sortBy: null,
-          ratings: null,
-          categories: {
-            mrf: false,
-            kookabura: false,
-            spartan: false,
-            nike: false,
-            exclusive: false,
-            newbalance: false,
-          }
-        
-      }
+        ...state,
+        range: 5000,
+        onlyInStock: false,
+        fastDelivery: false,
+        sortBy: null,
+        ratings: null,
+        categories: {
+          mrf: false,
+          kookabura: false,
+          spartan: false,
+          nike: false,
+          exclusive: false,
+          newbalance: false,
+        },
+      };
     default:
       return state;
   }

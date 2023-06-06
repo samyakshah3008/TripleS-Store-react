@@ -1,17 +1,19 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
-import { users } from "../backend/db/users";
 import { NavBar } from "../components/NavBar";
 import { useAuth } from "../contexts/auth-context";
 import { Link, useNavigate } from "react-router-dom";
-
 import "./LoginPage.css";
+import { useCart } from "../contexts/cart-context";
+import { useWishlist } from "../contexts/wishlist-context";
 
 export default function LoginPage() {
   const [userDetail, setUserDetail] = useState({ email: "", password: "" });
 
   const { setUser } = useAuth();
+  const { setCart } = useCart();
+  const { setWishlist } = useWishlist();
 
   const changeHandler = (e) => {
     setUserDetail((previousState) => ({
@@ -30,6 +32,27 @@ export default function LoginPage() {
         user: response.data.foundUser,
         token: response.data.encodedToken,
       });
+
+      // Get call for getting cart items
+
+      const responseForCart = await axios.get("/api/user/cart", {
+        headers: { authorization: response.data.encodedToken },
+      });
+
+      if (responseForCart.status === 200) {
+        setCart({ cart: responseForCart.data.cart });
+      }
+
+      // Get call for getting wishlist items
+
+      const responseForWishlist = await axios.get("/api/user/wishlist", {
+        headers: { authorization: response.data.encodedToken },
+      });
+
+      if (responseForWishlist.status === 200) {
+        setWishlist({ wishlist: responseForWishlist.data.wishlist });
+      }
+
       navigate("/");
     } catch (error) {
       console.log(error);

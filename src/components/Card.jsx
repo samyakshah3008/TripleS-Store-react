@@ -1,110 +1,13 @@
-import axios from "axios";
 import React from "react";
-import { useAuth } from "../contexts/auth-context";
-import { useWishlist } from "../contexts/wishlist-context";
-import { toast } from "react-hot-toast";
-import { Link, useNavigate } from "react-router-dom";
-import { useCart } from "../contexts/cart-context";
-import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useCartService } from "../services/useCartService";
+import { useWishlistService } from "../services/useWishlistService";
 
 const Card = ({ item, inWishlist, inCart }) => {
   const navigate = useNavigate();
-  const { user } = useAuth();
-  const { wishlist, setWishlist } = useWishlist();
-  const { cart, setCart } = useCart();
-
-  useEffect(() => {
-    user.token
-      ? (async () => {
-          try {
-            const responseFromServer = await axios.get("/api/user/wishlist", {
-              headers: { authorization: user.token },
-            });
-
-            if (responseFromServer.status === 200) {
-              setWishlist({ wishlist: responseFromServer.data.wishlist });
-            }
-          } catch (err) {
-            console.error("error", err);
-          }
-        })()
-      : setWishlist({ wishlist: [] });
-  }, []);
-
-  useEffect(() => {
-    user.token
-      ? (async () => {
-          try {
-            const responseForCart = await axios.get("/api/user/cart", {
-              headers: { authorization: user.token },
-            });
-
-            if (responseForCart.status === 200) {
-              setCart({ cart: responseForCart.data.cart });
-            }
-          } catch (error) {
-            console.log(error);
-          }
-        })()
-      : setCart({ cart: [] });
-  }, []);
-
-  const addToWishlistHandler = async () => {
-    if (user.token === null) {
-      navigate("/login");
-    }
-
-    try {
-      if (wishlist.wishlist.find((isProduct) => isProduct._id === item._id)) {
-        toast.error("Already in wishlist", { position: "top-right" });
-        return;
-      } else {
-        const response = await axios({
-          method: "post",
-          url: "/api/user/wishlist",
-          headers: { authorization: user.token },
-          data: { product: item },
-        });
-        setWishlist({ wishlist: response.data.wishlist });
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const deleteToWishlistHandler = async () => {
-    try {
-      const deleteResponse = await axios({
-        method: "delete",
-        url: `/api/user/wishlist/${item._id}`,
-        headers: { authorization: user.token },
-        data: { product: item },
-      });
-
-      setWishlist({ wishlist: deleteResponse.data.wishlist });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const goCartHandler = async () => {
-    if (user.token === null) {
-      navigate("/login");
-    }
-
-    try {
-      const cartResponse = await axios({
-        method: "post",
-        url: "/api/user/cart",
-        headers: { authorization: user.token },
-        data: { product: item },
-      });
-
-      setCart({ cart: cartResponse.data.cart });
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const { goCartHandler } = useCartService();
+  const { addToWishlistHandler, deleteToWishlistHandler } =
+    useWishlistService();
 
   return (
     <div>
@@ -116,12 +19,12 @@ const Card = ({ item, inWishlist, inCart }) => {
 
           {inWishlist ? (
             <i
-              onClick={deleteToWishlistHandler}
+              onClick={() => deleteToWishlistHandler(item)}
               className="image-badge-wishlist fa fa-heart"
             ></i>
           ) : (
             <i
-              onClick={addToWishlistHandler}
+              onClick={() => addToWishlistHandler(item)}
               className="image-badge-wishlist far fa-heart"
             ></i>
           )}
@@ -155,7 +58,7 @@ const Card = ({ item, inWishlist, inCart }) => {
             </button>
           ) : (
             <button
-              onClick={goCartHandler}
+              onClick={() => goCartHandler(item)}
               className="button2 full-width primary-color-button2"
             >
               Add to Cart

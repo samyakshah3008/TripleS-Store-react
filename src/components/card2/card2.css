@@ -72,3 +72,8 @@
     gap: 10px;
     margin-bottom: 1rem;
 }
+
+.secondary-color-button2 {
+    background-color: white;
+    color: var(--primary-color);
+}

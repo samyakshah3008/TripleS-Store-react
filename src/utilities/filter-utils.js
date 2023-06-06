@@ -105,7 +105,6 @@ const sortByCategory = (
     );
     newArray.push(...newList);
   }
-  console.log(newArray);
 
   return newArray;
 };

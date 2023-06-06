@@ -4,11 +4,14 @@ import { useCart } from "../contexts/cart-context";
 import { useWishlist } from "../contexts/wishlist-context";
 
 export function NavBar() {
+  // importing states from context
+
   const { user, setUser } = useAuth();
   const { wishlist, setWishlist } = useWishlist();
   const { cart, setCart } = useCart();
 
   const logoutHandler = () => {
+    // Resetting all values on logout click
     setUser({ token: null });
     navigate("/");
     setWishlist({ wishlist: [] });
@@ -51,8 +54,7 @@ export function NavBar() {
             <div className="wish-list-container">
               <i className="far fa-heart"></i>
               <span className="number-badge">
-                {" "}
-                {user.token === null ? "0" : wishlist.wishlist.length}{" "}
+                {user.token === null ? "0" : wishlist.wishlist.length}
               </span>
               <Link to="/wishlist">
                 <span className="wish-list">Wishlist</span>
@@ -64,8 +66,7 @@ export function NavBar() {
                 {user.token === null ? "0" : cart.cart.length}
               </span>
               <Link to="/cart">
-                {" "}
-                <span className="cart"> Cart </span>{" "}
+                <span className="cart"> Cart </span>
               </Link>
             </div>
           </div>

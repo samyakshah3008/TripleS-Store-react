@@ -15,8 +15,7 @@ export function Header() {
           </p>
 
           <Link to="/products">
-            {" "}
-            <button className="shop-now-btn">Shop now</button>{" "}
+            <button className="shop-now-btn">Shop now</button>
           </Link>
         </div>
 

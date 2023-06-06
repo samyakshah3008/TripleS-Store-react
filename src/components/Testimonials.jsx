@@ -6,7 +6,6 @@ export function Testimonials() {
       <div className="testimonials-container">
         <div className="testimonial-card">
           <i className="fa fa-quote-left testimonial-quote star selected-star"></i>
-
           <div className="feedback-content">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
             Dignissimos, quia!

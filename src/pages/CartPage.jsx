@@ -1,8 +1,9 @@
 import React from "react";
-import Card2 from "../components/Card2";
-import { NavBar } from "../components/NavBar";
+import { Card2, NavBar } from "../components";
+// import { Card2 } from "../components/card2";
+// import { NavBar } from "../components/NavBar";
 import { useCart } from "../contexts/cart-context";
-import "../components/card2.css";
+import "../components/card2/card2.css";
 
 export default function CartPage({ item }) {
   const { cart, setCart } = useCart();
@@ -11,6 +12,7 @@ export default function CartPage({ item }) {
   return (
     <div>
       <NavBar />
+
       <main>
         <h1 className="product-type-titles">My Personal Cart</h1>
         <div class="final-pay-bill-container">

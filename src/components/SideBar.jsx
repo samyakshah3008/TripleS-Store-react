@@ -8,14 +8,17 @@ export function SideBar() {
   return (
     <div>
       <div className="side-bar-container">
-      
         <div className="title">
           <div className="heading-title">Filters</div>
         </div>
 
-        <h3 style={{cursor: "pointer"}} onClick={() => dispatch({ type: "CLEAR"})} >Clear filters</h3>
+        <h3
+          style={{ cursor: "pointer" }}
+          onClick={() => dispatch({ type: "CLEAR" })}
+        >
+          Clear filters
+        </h3>
 
-        
         <div className="filters">
           <div className="filter-wrapper">
             <div className="filter-title">Price</div>
@@ -37,7 +40,7 @@ export function SideBar() {
             />
             <div>
               <input
-              checked = {state.onlyInStock}
+                checked={state.onlyInStock}
                 className="instock"
                 type="checkbox"
                 onClick={(e) =>
@@ -48,7 +51,7 @@ export function SideBar() {
             </div>
             <div>
               <input
-              checked = {state.fastDelivery}
+                checked={state.fastDelivery}
                 className="fastdelivery"
                 type="checkbox"
                 onClick={(e) =>
@@ -63,7 +66,7 @@ export function SideBar() {
             <div className="filter-value filter-category">
               <label>
                 <input
-                checked = {state.categories.mrf}
+                  checked={state.categories.mrf}
                   onChange={(e) => dispatch({ type: "MRF" })}
                   className="checkbox-input"
                   type="checkbox"
@@ -73,7 +76,7 @@ export function SideBar() {
 
               <label>
                 <input
-                checked = {state.categories.kookabura}
+                  checked={state.categories.kookabura}
                   onChange={(e) => dispatch({ type: "KOOKABURA" })}
                   className="checkbox-input"
                   type="checkbox"
@@ -83,7 +86,7 @@ export function SideBar() {
 
               <label>
                 <input
-                checked = {state.categories.nike}
+                  checked={state.categories.nike}
                   onChange={(e) => dispatch({ type: "NIKE" })}
                   className="checkbox-input"
                   type="checkbox"
@@ -93,7 +96,7 @@ export function SideBar() {
 
               <label>
                 <input
-                checked = {state.categories.newbalance}
+                  checked={state.categories.newbalance}
                   onChange={(e) => dispatch({ type: "NEWBALANCE" })}
                   className="checkbox-input"
                   type="checkbox"
@@ -103,7 +106,7 @@ export function SideBar() {
 
               <label>
                 <input
-                checked = {state.categories.spartan}
+                  checked={state.categories.spartan}
                   onChange={(e) => dispatch({ type: "SPARTAN" })}
                   className="checkbox-input"
                   type="checkbox"
@@ -113,7 +116,7 @@ export function SideBar() {
 
               <label>
                 <input
-                checked = {state.categories.exclusive}
+                  checked={state.categories.exclusive}
                   onChange={(e) => dispatch({ type: "EXCLUSIVE" })}
                   className="checkbox-input"
                   type="checkbox"
@@ -130,7 +133,7 @@ export function SideBar() {
             <div className="filter-value filter-rating">
               <label>
                 <input
-                checked = {state.ratings === "4STARSABOVE"}
+                  checked={state.ratings === "4STARSABOVE"}
                   className="radio-input"
                   type="radio"
                   name="rating"
@@ -143,7 +146,7 @@ export function SideBar() {
 
               <label>
                 <input
-                checked = {state.ratings === "3STARSABOVE"}
+                  checked={state.ratings === "3STARSABOVE"}
                   className="radio-input"
                   type="radio"
                   name="rating"
@@ -156,7 +159,7 @@ export function SideBar() {
 
               <label>
                 <input
-                checked = {state.ratings === "2STARSABOVE"}
+                  checked={state.ratings === "2STARSABOVE"}
                   className="radio-input"
                   type="radio"
                   name="rating"
@@ -169,7 +172,7 @@ export function SideBar() {
 
               <label>
                 <input
-                checked = {state.ratings === "1STARSABOVE"}
+                  checked={state.ratings === "1STARSABOVE"}
                   className="radio-input"
                   type="radio"
                   name="rating"
@@ -187,7 +190,7 @@ export function SideBar() {
             <div className="filter-value">
               <label>
                 <input
-                checked = {state.sortBy === "HIGH_TO_LOW"}
+                  checked={state.sortBy === "HIGH_TO_LOW"}
                   className="radio-input"
                   type="radio"
                   name="price-level"
@@ -200,7 +203,7 @@ export function SideBar() {
 
               <label>
                 <input
-                checked = {state.sortBy === "LOW_TO_HIGH"}
+                  checked={state.sortBy === "LOW_TO_HIGH"}
                   className="radio-input"
                   type="radio"
                   name="price-level"

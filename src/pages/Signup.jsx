@@ -25,7 +25,6 @@ export default function Signup() {
   const signupUserHandler = async () => {
     try {
       const response = await axios.post("/api/auth/signup", userSignup);
-      console.log(response);
       setUser({
         users: response.data.createdUser,
         token: response.data.encodedToken,
