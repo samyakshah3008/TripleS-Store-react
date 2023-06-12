@@ -19,7 +19,7 @@ export function Products() {
   const wishlistid = wishlist.wishlist.map((item) => item._id);
   const cartid = cart.cart.map((item) => item._id);
 
-  const { state, dispatch } = useFilter();
+  const { state } = useFilter();
 
   const { mrf, kookabura, spartan, nike, exclusive, newbalance } =
     state.categories;
@@ -46,7 +46,7 @@ export function Products() {
   );
 
   return (
-    <div>
+    <>
       <div className="product-display-container">
         {sortByCategoryFinalList.map((item) => (
           <Card
@@ -56,7 +56,10 @@ export function Products() {
             inCart={cartid.includes(item._id)}
           />
         ))}
+        <div className="mobile__filter">
+          <button className="theme-color">Filter</button>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

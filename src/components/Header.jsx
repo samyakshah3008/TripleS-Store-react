@@ -20,7 +20,11 @@ export function Header() {
         </div>
 
         <div className="hero-header-img">
-          <img src={heroHeader} alt="workout-img" />
+          <img
+            className="hero-heading-img"
+            src={heroHeader}
+            alt="workout-img"
+          />
         </div>
       </div>
     </header>

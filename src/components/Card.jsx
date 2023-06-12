@@ -10,7 +10,7 @@ const Card = ({ item, inWishlist, inCart }) => {
     useWishlistService();
 
   return (
-    <div>
+    <>
       <div className="card e-commerce product-display-card">
         <div className="container1 badge-card">
           <img className="card-image" src={item.imageURL} />
@@ -66,7 +66,7 @@ const Card = ({ item, inWishlist, inCart }) => {
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

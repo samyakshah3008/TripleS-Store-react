@@ -69,7 +69,7 @@ export default function LoginPage() {
         <div className="login-signup-container">
           <div className="login-signup-header">Log in</div>
           <div className="name-container">
-            <div>Email</div>
+            <div className="label-name">Email:</div>
             <input
               name="email"
               onChange={(e) => changeHandler(e)}
@@ -81,7 +81,7 @@ export default function LoginPage() {
           </div>
 
           <div className="password-container">
-            <div>Password</div>
+            <div className="label-name">Password: </div>
             <input
               name="password"
               onChange={(e) => changeHandler(e)}
@@ -96,18 +96,17 @@ export default function LoginPage() {
             onClick={() => logInUserHandler(false)}
             className="signup-btn btn2"
           >
-            log in
+            Log in
           </button>
 
           <button
             onClick={() => logInUserHandler(true)}
             className="signup-btn btn2 secondary-test-credential-btn"
           >
-            log in with Test Credentials
+            Log in with Test Credentials
           </button>
 
           <div className="login-instead-container">
-            {" "}
             <Link to="/signup">
               <div className="login-message">Sign up instead</div>
             </Link>

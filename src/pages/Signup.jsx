@@ -45,7 +45,7 @@ export default function Signup() {
         <div className="login-signup-container">
           <div className="login-signup-header">Sign up</div>
           <div className="name-container">
-            <div>Email</div>
+            <div className="label-name">Email</div>
             <input
               name="email"
               onChange={(e) => changeHandlerSignup(e)}
@@ -57,7 +57,7 @@ export default function Signup() {
           </div>
 
           <div className="name-container">
-            <div>Enter first name</div>
+            <div className="label-name">Enter first name</div>
             <input
               name="firstName"
               onChange={(e) => changeHandlerSignup(e)}
@@ -69,7 +69,7 @@ export default function Signup() {
           </div>
 
           <div className="name-container">
-            <div>Enter last name</div>
+            <div className="label-name">Enter last name</div>
             <input
               name="lastName"
               onChange={(e) => changeHandlerSignup(e)}
@@ -81,7 +81,7 @@ export default function Signup() {
           </div>
 
           <div className="password-container">
-            <div>Password</div>
+            <div className="label-name">Password</div>
             <input
               name="password"
               onChange={(e) => changeHandlerSignup(e)}

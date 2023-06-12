@@ -1,68 +1,73 @@
 .signup-btn {
-    width: 7rem;
-    padding: 10px;
-    background-color: var(--primary-color);
-    color: var(--white);
-    border: 2px solid var(--primary-color);
-    cursor: pointer;
-    transition: 0.4s;
+  width: 7rem;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: 2px solid var(--primary-color);
+  cursor: pointer;
+  transition: 0.4s;
 }
 
 .btn2 {
-    width: 100%;
+  width: 100%;
 }
 
 .signup-btn:hover {
-    background-color: var(--red);
+  background-color: var(--red);
 }
 
 .login-signup-container {
-    width: 400px;
-    height: 400px;
-    margin: auto;
-    margin-top: 5rem;
-    box-shadow: 5px 5px 18px 5px var(--secondary);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 1.2rem;
-    gap: 1rem;
+  width: 400px;
+  height: 400px;
+  margin: auto;
+  margin-top: 5rem;
+  box-shadow: 5px 5px 18px 5px var(--secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 1.2rem;
+  gap: 1rem;
 }
 
 .login-signup-header {
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
 }
 
 .login-signup-input {
-    width: 100%;
-    height: 2.3rem;
-    outline: none;
+  width: 100%;
+  height: 2.3rem;
+  outline: none;
+  margin-top: 0.2rem;
+  padding: 1rem;
+}
+
+.label-name {
+  font-weight: 600;
 }
 
 .remember-me-container {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .login-instead-container {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
 }
 
 .login-instead-container:hover {
-    cursor: pointer;
-    color: var(--primary-color);
+  cursor: pointer;
+  color: var(--primary-color);
 }
 
 .secondary-test-credential-btn {
-    background-color: var(--white);
-    color: var(--primary-color);
-
+  background-color: var(--white);
+  color: var(--primary-color);
 }
 
 .secondary-test-credential-btn:hover {
-    color: var(--secondary);
+  color: var(--secondary);
 }

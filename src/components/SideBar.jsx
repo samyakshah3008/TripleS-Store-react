@@ -6,7 +6,7 @@ export function SideBar() {
   const { products } = useProduct();
 
   return (
-    <div>
+    <>
       <div className="side-bar-container">
         <div className="title">
           <div className="heading-title">Filters</div>
@@ -217,6 +217,6 @@ export function SideBar() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
